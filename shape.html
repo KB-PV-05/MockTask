@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K.B. Parvathy Vidhya</title>
+    <link rel="stylesheet" href="stylesparvathyv.css">
+  </head>
+  <body>
+    <div id="container">
+      <div id="div1">
+        <div id="block1">I am left</div>
+      </div>
+      <div id="div2">
+        <div id="block2">I am right</div>
+      </div>
+    </div>
+    <div class="bloc-container">
+      <button onclick="changeShape()">Change Shape</button>
+      <button onclick="changeDirection()">Change Direction</button>
+      <button onclick="Reset()">Reset</button>
+    </div>
+    <script>
+      let toggle = true;
+      let direction = true;
+      function changeShape() {
+        if (toggle) {
+          document.getElementById("div1").style.borderStartStartRadius = "0";
+          document.getElementById("div1").style.borderEndEndRadius = "13rem";
+          document.getElementById("div1").style.backgroundColor = "blue";
+          document.getElementById("div2").style.borderStartEndRadius = "13rem";
+          document.getElementById("div2").style.borderEndStartRadius = "0";
+          document.getElementById("div2").style.backgroundColor = "red";
+          toggle = false;
+        } else {
+          document.getElementById("div1").style.borderRadius = "0";
+          document.getElementById("div1").style.borderStartStartRadius =
+            "12.5rem";
+          document.getElementById("div1").style.backgroundColor = "green";
+          document.getElementById("div2").style.borderRadius = "0";
+          document.getElementById("div2").style.borderEndStartRadius = "13rem";
+          document.getElementById("div2").style.backgroundColor = "yellow";
+          toggle = true;
+        }
+      }
+      function changeDirection() {
+        if (direction) {
+          document.getElementById("container").style.flexDirection =
+            "row-reverse";
+          direction = false;
+        } else {
+          document.getElementById("container").style.flexDirection = "row";
+          direction = true;
+        }
+      }
+
+      function Reset() {
+        document.getElementById("div1").style.borderStartStartRadius = "0";
+        document.getElementById("div1").style.borderEndEndRadius = "0";
+        document.getElementById("div1").style.backgroundColor = "green";
+        document.getElementById("div2").style.borderStartEndRadius = "0";
+        document.getElementById("div2").style.borderEndStartRadius = "0";
+        document.getElementById("div2").style.backgroundColor = "violet";
+      }
+    </script>
+  </body>
+</html>
